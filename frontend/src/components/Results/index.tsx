@@ -6,6 +6,7 @@ import WeatherDescription from '../WeatherDescription';
 import CardRow from '../CardRow';
 
 import classes from './Results.module.css';
+import { convertWindspeedToMPH } from '../../utils/convertWindspeedToMPH';
 interface ResultsProps {
   city: City;
 }
@@ -31,7 +32,7 @@ const Results = ({ city }: ResultsProps) => {
           />
           <CardRow
             description="Wind Speed"
-            value={`${(forecast.windSpeed / 1.609).toFixed(1)}mph`}
+            value={`${convertWindspeedToMPH(forecast.windSpeed)}mph`}
           />
         </div>
       ))}

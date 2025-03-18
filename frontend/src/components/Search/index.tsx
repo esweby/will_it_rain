@@ -6,7 +6,7 @@ interface SearchProps {
 }
 
 const Search = ({ query, setQuery }: SearchProps) => {
-  const handleTermChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+  const handleQueryChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setQuery(e.target.value);
   };
 
@@ -15,7 +15,7 @@ const Search = ({ query, setQuery }: SearchProps) => {
       <input
         type="text"
         value={query}
-        onChange={handleTermChange}
+        onChange={handleQueryChange}
         className={classes.input}
       />
     </section>

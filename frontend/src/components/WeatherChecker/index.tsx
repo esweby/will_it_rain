@@ -11,6 +11,10 @@ const WeatherChecker = () => {
   const { cities, fetchCity } = useCityQuery();
 
   useEffect(() => {
+    if (!debouncedCityQuery) {
+      return;
+    }
+
     fetchCity(debouncedCityQuery);
   }, [debouncedCityQuery, fetchCity]);
 

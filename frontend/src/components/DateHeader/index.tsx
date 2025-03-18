@@ -15,7 +15,6 @@ const daysOfWeek = [
 ];
 
 const DateHeader = ({ date }: DateHeaderProps) => {
-  console.log(date.getDay());
   return (
     <div>
       <h2 className={classes.day}>{daysOfWeek[date.getDay()]}</h2>

@@ -7,10 +7,14 @@ interface WeatherIconProps {
 }
 
 const WeatherIcon = ({ weatherCode = '0' }: WeatherIconProps) => {
+  if (!weatherCodes[weatherCode]) {
+    return;
+  }
+
   return (
     <img
-      src={weatherCodes[weatherCode].img}
-      alt={weatherCodes[weatherCode].text}
+      src={weatherCodes[weatherCode]?.img}
+      alt={weatherCodes[weatherCode]?.text}
       className={classes.img}
     />
   );

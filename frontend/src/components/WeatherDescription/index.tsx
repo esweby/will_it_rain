@@ -8,7 +8,9 @@ interface WeatherDescriptionProps {
 
 const WeatherDescription = ({ weatherCode = '0' }: WeatherDescriptionProps) => {
   return (
-    <p className={classes.description}>{weatherCodes[weatherCode].text}</p>
+    <p className={classes.description}>
+      {weatherCodes[weatherCode]?.text || ''}
+    </p>
   );
 };
 
