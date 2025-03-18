@@ -1,7 +1,11 @@
-.title {
-    font-size: 1.25rem;
-    font-weight: 400;
-    text-align: center;
-    margin: 0 0 1rem;
+.day,
+.date {
+  font-size: 1.25rem;
+  font-weight: 400;
+  text-align: center;
+  margin: 0 0 1rem;
+}
 
+.day {
+  margin: 0;
 }

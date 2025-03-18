@@ -1,25 +1,25 @@
-import { useEffect, useState } from "react"
-import Search from "../Search"
-import Results from "../Results"
-import useDebounce from "../../hooks/useDebounce"
-import useCityQuery from "../../hooks/useCityQuery"
+import { useEffect, useState } from 'react';
+import Search from '../Search';
+import Results from '../Results';
+import useDebounce from '../../hooks/useDebounce';
+import useCityQuery from '../../hooks/useCityQuery';
 
 const WeatherChecker = () => {
-    const [cityQuery, setCityQuery] = useState("")
-    
-    const debouncedCityQuery = useDebounce(cityQuery, 500);
-    const { cities, fetchCity } = useCityQuery();
+  const [cityQuery, setCityQuery] = useState('');
 
-    useEffect(() => {
-        fetchCity(debouncedCityQuery);
-    }, [debouncedCityQuery, fetchCity])
+  const debouncedCityQuery = useDebounce(cityQuery, 750);
+  const { cities, fetchCity } = useCityQuery();
 
-    return(
-        <>
-            <Search query={cityQuery} setQuery={setCityQuery} />
-            {cities[cityQuery] && <Results city={cities[cityQuery]} />}
-        </>
-    )
-}
+  useEffect(() => {
+    fetchCity(debouncedCityQuery);
+  }, [debouncedCityQuery, fetchCity]);
+
+  return (
+    <>
+      <Search query={cityQuery} setQuery={setCityQuery} />
+      {cities[cityQuery] && <Results city={cities[cityQuery]} />}
+    </>
+  );
+};
 
 export default WeatherChecker;
