@@ -1,4 +1,4 @@
-# will_it_rain
+# Will it rain?
  
 A five day weather forecast using the open-meteo api, just enter the city name and the app will get you the forecast for your city.
 
