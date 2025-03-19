@@ -17,6 +17,9 @@ const Search = ({ query, setQuery }: SearchProps) => {
         value={query}
         onChange={handleQueryChange}
         className={classes.input}
+        placeholder="Enter city name..."
+        aria-label="City search input field"
+        name="city"
       />
     </section>
   );
